@@ -11,10 +11,10 @@ import Foundation
 public class ObjCFeature: NSObject {
     private(set) var _id: String
     private(set) var _variation: String
-    private(set) var key: String
-    private(set) var type: String
-    private(set) var variationKey: String
-    private(set) var variationName: String
+    public private(set) var key: String
+    public private(set) var type: String
+    public private(set) var variationKey: String
+    public private(set) var variationName: String
     
     init(_ feature: Feature) {
         self._id = feature._id
@@ -34,10 +34,10 @@ public class ObjCFeature: NSObject {
 @objc(Variable)
 public class ObjCVariable: NSObject {
     private(set) var _id: String
-    private(set) var key: String
-    private(set) var type: String
-    private(set) var value: Any
-    private(set) var evalReason: String?
+    public private(set) var key: String
+    public private(set) var type: String
+    public private(set) var value: Any
+    public private(set) var evalReason: String?
     
     init(_ variable: Variable) {
         self._id = variable._id

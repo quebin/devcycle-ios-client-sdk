@@ -103,10 +103,10 @@ public struct Environment {
 public struct Feature {
     var _id: String
     var _variation: String
-    var key: String
-    var type: String
-    var variationKey: String
-    var variationName: String
+    public private(set) var key: String
+    public private(set) var type: String
+    public private(set) var variationKey: String
+    public private(set) var variationName: String
     
     init (from dictionary: [String: String]) throws {
         guard let id = dictionary["_id"] else { throw UserConfigError.MissingProperty("_id in Feature object") }
@@ -126,10 +126,10 @@ public struct Feature {
 
 public struct Variable {
     var _id: String
-    var key: String
-    var type: String
-    var value: Any
-    var evalReason: String?
+    public private(set) var key: String
+    public private(set) var type: String
+    public private(set) var value: Any
+    public private(set) var evalReason: String?
     
     init (from dictionary: [String: Any]) throws {
         guard let id = dictionary["_id"] as? String else { throw UserConfigError.MissingProperty("_id in Variable object") }
